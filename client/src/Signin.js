@@ -1,6 +1,6 @@
 import React from 'react';
 import api from './helpers/api';
-import { withRouter } from 'react-router-dom';
+//import { withRouter } from 'react-router-dom';
 
 class Signin extends React.Component {
     state = {
@@ -14,7 +14,7 @@ class Signin extends React.Component {
 
         try {
            
-            const result = await api.post('/signin', {
+            const result = await api.post('/login', {
                 username: this.state.username,
                 password: this.state.password,
             })
@@ -34,17 +34,17 @@ class Signin extends React.Component {
     render() {
         return (
             <>
-                <h3> Login </h3>
+                <h3> SignIn </h3>
                 <form onSubmit={this.handleSubmit}>
                     <input type='text' name='username' placeholder='username' onChange=
                     {this.handleChange} value={this.state.username} />
                     <input type='password' name='password' placeholder='Password' onChange=
                     {this.handleChange} value={this.state.password} />
-                    <button type='submit'>Login</button>
+                    <button type='submit'>SignIn</button>
                 </form>
             </>    
         )
     }
 }
 
-export default withRouter(Signin)
+export default Signin

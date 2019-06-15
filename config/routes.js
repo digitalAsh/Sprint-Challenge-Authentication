@@ -1,5 +1,4 @@
 const axios = require('axios');
-//const router = require('express').Router()
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -10,6 +9,7 @@ module.exports = server => {
   server.post('/api/register', register);
   server.post('/api/login', login);
   server.get('/api/jokes', authenticate, getJokes);
+  server.get('/api/users', getUsers);
 };
 
 function generateToken(user) {
@@ -79,3 +79,11 @@ function getJokes(req, res) {
       res.status(500).json({ message: 'Error Fetching Jokes', error: err });
     });
 }
+
+function getUsers (req, res) {
+    Users.find()
+        .then(users => {
+            res.json(users);
+        })
+        .catch(err => res.send(err));
+};
