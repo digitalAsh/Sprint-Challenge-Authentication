@@ -29,9 +29,21 @@ Implement an User Authentication System in order to access the jokes from the Jo
 Demonstrate your understanding of this week's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 1. What is the purpose of using _sessions_?
+
+ The purpose of using sessions are to be able to authorize a user to access data.  Sessions are stored in a server or database.  They can be set to expire so a user automatically is logged out.
+
 1. What does bcrypt do to help us store passwords in a secure manner.
-1. What does bcrypt do to slow down attackers?
+
+Bcrypt is a password hashing function that is a one way encrpyption to avoid hackers finding out the key to hack the password.
+
+1. What does bcrypt do to slow down attackers?.
+
+Bcrypt can be used to hash multiple times to make it more difficult for hackers.  You can also add Salt to it to make it even 
+harder to hack.
+
 1. What are the three parts of the JSON Web Token?
+
+Three parts to a JSON web token are header, payload, and signature  
 
 ## Project Set Up
 
